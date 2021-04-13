@@ -13,7 +13,7 @@ class Perks(commands.Cog):
     async def on_ready(self):
         print(f"> Cog {Fore.GREEN}Perks{Fore.RESET} Loaded Correctly")
     @commands.command()
-    async def rewards(self, ctx):
+    async def perks(self, ctx):
         with open("data/rewards/boost_perks.txt", "r") as f:
             perks = f.read().splitlines()
             lawea2 = '\n'.join(perks[0:50])
