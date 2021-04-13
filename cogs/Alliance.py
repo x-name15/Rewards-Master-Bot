@@ -35,7 +35,7 @@ class Alliance(commands.Cog):
             embed2 = discord.Embed(title="The command is: ```rm!alliance [Name of the server | ID | Invite ]```", colour=0xFF0000)
             await ctx.send(embed=embed2)
             return
-        if ID is None:
+        if invite is None:
             embed3 = discord.Embed(title="The command is: ```rm!alliance [Name of the server | ID | Invite ]```", colour=0xFF0000)
             await ctx.send(embed=embed3)
             return
