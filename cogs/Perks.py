@@ -6,7 +6,7 @@ from discord.ext import commands
 from colorama import Fore
 from colorama import init
 init()
-class Rewards(commands.Cog):
+class Perks(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     @commands.Cog.listener()
@@ -21,4 +21,4 @@ class Rewards(commands.Cog):
         await ctx.author.send(embed=embed)
         await ctx.send("Check ur DMs, I send you the Boost Perks")
 def setup(bot):
-    bot.add_cog(Rewards(bot))
+    bot.add_cog(Perks(bot))
