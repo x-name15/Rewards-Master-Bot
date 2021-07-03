@@ -29,5 +29,16 @@ class Crypto(commands.Cog):
         em = discord.Embed(description=f'USD: `{str(usd)}$`\nEUR: `{str(eur)}€`')
         em.set_author(name='Etherum Price', icon_url='https://cdn.discordapp.com/attachments/271256875205525504/374282740218200064/2000px-Ethereum_logo.png')
         await ctx.send(embed=em)
+    @commands.command()
+    async def xrp(self, ctx):
+        r = requests.get('https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD,EUR,GBP')
+        r = r.json()
+        usd = r['USD']
+        eur = r['EUR']
+        gbp = r['GBP']
+        em = discord.Embed(description=f'USD: `${str(usd)}`\nEUR: `€{str(eur)}`\nGBP: `£{str(gbp)}`')
+        em.set_author(name='XRP', icon_url='https://s2.coinmarketcap.com/static/img/coins/32x32/52.png')
+        await ctx.send(embed=em)
+
 def setup(bot):
     bot.add_cog(Crypto(bot))
